@@ -62,7 +62,8 @@
           "pages": [
             "page/gtr3/home/index.page",
             "page/gtr3/home/index2",
-            "page/gtr3/home/countdown"
+            "page/gtr3/home/countdown",
+            "page/gtr3/home/aboutPage"
           ],
           "window": {
             "navigationBarBackgroundColor": "#ffffff",
@@ -105,7 +106,8 @@
           "pages": [
             "page/gtr3/home/index.page",
             "page/gtr3/home/index2",
-            "page/gtr3/home/countdown"
+            "page/gtr3/home/countdown",
+            "page/gtr3/home/aboutPage"
           ]
         }
       },
@@ -211,7 +213,10 @@
   ,
   "i18n": {
     "en-US": {
-      "appName": "Tabata"
+      "appName": "Tabata/间隔振动"
+    },
+    "zh-CN":{
+      "appName": "Tabata/间隔振动"
     }
   },
   "defaultLanguage": "en-US"

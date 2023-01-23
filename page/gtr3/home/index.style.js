@@ -27,23 +27,19 @@ export const subtitle ={
 
 export const addButton = {
   // text: gettext('appName'),
-  text: "Add",
-  x: px(200-125),
-  y:px(270),
-  w: px(50),
-  h: px(40),
+  text: "设置\n间隔",
+  x: px(30),
+  y:px(20+250),
+  w: px(60),
+  h: px(60),
   color: 0xffffff,
-  text_size: px(20),
-  normal_color: 0x68BBE3,
-  press_color:0x808080,
+  text_size: px(18),
+  radius: 10,
+  normal_color: 0x0986D4,
+  press_color:0x97cbff,
   click_func: () => {
      hmApp.gotoPage({ url: 'page/gtr3/home/index2',})
-    // button_widget.setProperty(hmUI.prop.MORE, {
-    //   x: (480 - 400) / 2,
-    //   y: 300,
-    //   w: 400,
-    //   h: 100,
-    // })
+ 
   }
   
 }
@@ -52,13 +48,15 @@ export const buttonStyle = {
   // text: gettext('appName'),
   text: "Start",
   x: px(140-125),
-  y:px(340-200),
+  y:px(340),
   w: DEVICE_WIDTH - px(150) * 2,
   h: px(50),
+  
   color: 0xffffff,
   text_size: px(36),
-  normal_color: 0xBEBEBE,
-  press_color:0x808080,
+  normal_color: 0x0986D4,
+  press_color:0x97cbff,
+  radius:10,
   click_func: (button_widget) => {
     hmApp.gotoPage({ url: 'page/gtr3/home/countdown',})
     
@@ -183,12 +181,7 @@ export const selectDuration={
       press_color:0x808080,
       click_func: (button_widget) => {
         hmApp.gotoPage({ url: 'page/gtr3/home/countdown',})
-        // button_widget.setProperty(hmUI.prop.MORE, {
-        //   x: (480 - 400) / 2,
-        //   y: 300,
-        //   w: 400,
-        //   h: 100,
-        // })
+     
       }
     })
     

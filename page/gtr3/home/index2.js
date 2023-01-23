@@ -12,15 +12,15 @@ Page({
 
     try{
 
-    hmUI.createWidget(hmUI.widget.FILL_RECT, {
-      x: 0,
-      y: 0,
-      w: 192,
-      h: 490,
-      radius: 20,
-      color: 0xbebebe,
-    });
-
+      //hmUI.createWidget(hmUI.widget.IMG,{x:0,y:10,src:"aboutpage.png"})
+      // hmUI.createWidget(hmUI.widget.FILL_RECT, {
+      //   x: 0,
+      //   y: 0,
+      //   w: 192,
+      //   h: 490,
+      //   radius: 20,
+      //   color: 0x1f1f1f, //background color
+      // });
     let dataList = [
         { name: "1s",value:1 },
         { name: "2s", value:2},
@@ -31,67 +31,26 @@ Page({
         { name: "30s" , value:30},
         { name: "60s" , value:60},
       ];
-  
-      hmUI.createWidget(hmUI.widget.SCROLL_LIST, {
-        x: 55,
-        y: 40,
-        h: 400,
-        w: 80,
-        item_space: 10,
-        item_config: [
-          {
-            type_id: 1,
-            item_bg_color: 0xef5350,
-            item_bg_radius: 10,
-            text_view: [
-              {
-                x: 0,
-                y: 0,
-                w: 80,
-                h: 40,
-                key: "name",
-                color: 0xffffff,
-                text_size: 20,
-              },
-            ],
-            text_view_count: 1,
-            item_height: 40,
+      for (var i = 0; i < dataList.length; i++) {
+        let value = dataList[i].value
+        hmUI.createWidget(hmUI.widget.BUTTON, {
+          x: 55,
+          y: 20+i * 55,
+          text: dataList[i].name,
+          w: 80,
+          h: 40,
+          // color:0x0986D4,
+          radius: 10,
+          normal_color: 0xadc3c23,
+          press_color: 0xffffff,
+          click_func: () => {
+
+            globalData.interval_list.push({value:value})
+              hmApp.goBack()
           },
-        ],
-        item_config_count: 1,
-        data_array: dataList,
-        data_count: dataList.length,
-        item_click_func: (item, index) => {
-          console.log(`scrollListItemClick index=${index}`);
-        globalData.interval_list.push({value:dataList[index].value})
-          hmApp.goBack()
-        },
-        data_type_config: [
-          {
-            start: 0,
-            end: 1,
-            type_id: 1,
-          },
-        ],
-        data_type_config_count: 1,
-      });
-  
-    
-    //   function updateConfig() {
-    //     scroll_list.setProperty(hmUI.prop.UPDATE_DATA, {
-    //       data_type_config: [
-    //         {
-    //           start: 0,
-    //           end: 2,
-    //           type_id: 1,
-    //         },
-    //       ],
-    //       data_type_config_count: 1,
-    //       data_array: dataList,
-    //       data_count: dataList.length,
-    //       on_page: 1,
-    //     });
-    //   }
+        });
+      }
+      
     }catch(e){
       logger.log("The error is "+e)
     }
